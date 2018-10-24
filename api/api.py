@@ -1,7 +1,9 @@
-from flask import Flask
+from flask import Flask, jsonify, request
+from flask_restplus import Api, Resource
 import random
 
 app = Flask(__name__)
+api = Api(app)
 
 memes = [
   'Wow. Many meme. Such funny. Very docker.',
@@ -12,6 +14,9 @@ memes = [
   'Brace yourselves, containerization is coming.'
 ]
 
-@app.route('/')
-def super_duper_meme():
-    return '<h1>' + random.choice(memes) + '</h1>'
+@api.route('/v1/meme')
+class Meme(Resource):
+  def get(self):
+    return { 'content': random.choice(memes) }
+
+app.run()
