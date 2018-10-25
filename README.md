@@ -15,13 +15,11 @@ Here are the steps to setup/deploy these services:
 * Setup a virtualenv for each component/deployment, activate, and install requirements
 
 ```bash
-./app.sh frontend deps
-./app.sh api deps
+./deps.sh
 ```
 
 * Start each service
 
 ```bash
-./app.sh frontend run
-./app.sh api run
+./run.sh
 ```
