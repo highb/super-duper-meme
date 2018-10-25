@@ -19,4 +19,5 @@ class Meme(Resource):
   def get(self):
     return { 'content': random.choice(memes) }
 
-app.run()
+if __name__ == "__main__":
+  app.run()
