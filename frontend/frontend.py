@@ -10,7 +10,7 @@ def index():
     api_meme_req = requests.get(api_url, timeout=1)
     if api_meme_req.status_code == 200:
       api_meme = api_meme_req.json()
-      return '<h1>' + api_meme['content'] + '</h1>'
+      return '<h1>' + api_meme['content'] + '</h1><br /><p>Hit counter: ' + str(api_meme['hits']) + '</p>'
     else:
       return 'API at ' + api_url + ' returned error code: ' + api_meme_req.status_code
   except requests.exceptions.ConnectionError:
