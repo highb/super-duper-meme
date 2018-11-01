@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  api_url = 'http://localhost:9001/v1/meme'
+  api_url = 'http://api:9001/v1/meme'
   try: 
     api_meme_req = requests.get(api_url, timeout=1)
     if api_meme_req.status_code == 200:
