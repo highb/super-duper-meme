@@ -6,20 +6,13 @@ Super Duper Meme Generator
 * frontend - The user-facing website
 * api - The backend API that powers the website, as well as integrators.
 
-## Manual Setup
+## Setup
 
-Here are the steps to setup/deploy these services:
+Use `docker-compose build && docker-compose up` to build and run.
 
-* Install Python3
-
-* Setup a virtualenv for each component/deployment, activate, and install requirements
+If you want to do the builds manually:
 
 ```bash
-./deps.sh
-```
-
-* Start each service
-
-```bash
-./run.sh
+pushd api; docker build -t super-duper-meme_api .; popd
+pushd frontend; docker build -t super-duper-meme_frontend .; popd
 ```
